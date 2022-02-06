@@ -4,13 +4,12 @@ import (
 	"github.com/codedbychavez/go-rabbitmq-api/controllers"
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/logger"
-
 )
 
 
 func main( ) {
-	app := fiber.New()
 
+	app := fiber.New()
 
 	// Setup logger --> Logs requests to the console
 	app.Use(logger.New(logger.Config{
@@ -28,4 +27,6 @@ func main( ) {
 	})
 
 	app.Listen(":3000")
+
+
 }

@@ -1,10 +1,8 @@
 package controllers
 
 import (
-
 	"github.com/codedbychavez/go-rabbitmq-api/models"
-	"github.com/codedbychavez/go-rabbitmq-api/rabbitmq"
-
+	"github.com/codedbychavez/go-rabbitmq-api/task"
 
 	"github.com/gofiber/fiber/v2"
 )
@@ -24,7 +22,7 @@ func (ctrl TaskController) ReceiveTask(c *fiber.Ctx) error {
 	})
 
 	// Trigger new task
-	rabbitmq.NewTask()
+	task.NewTask()
 
 	c.BodyParser(&params)
 
